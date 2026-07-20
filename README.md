@@ -26,4 +26,6 @@ Return to Excel Workbook -> Right click or push the down arrow in the Quick Acce
 
 Select the added Macro (The name may be different, CoPilot gave some funky names, but it should start with PERSONAL.XLSB).
 
+Changing the .bas to .txt will allow you to open the file as a text file to copy and change the code as desired.
+
 Modify the macro name and icon as desired and a button will appear on top. Follow the prompts. Get graphs. Be Happy
