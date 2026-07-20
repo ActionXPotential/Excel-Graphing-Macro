@@ -29,3 +29,8 @@ Select the added Macro (The name may be different, CoPilot gave some funky names
 Changing the .bas to .txt will allow you to open the file as a text file to copy and change the code as desired.
 
 Modify the macro name and icon as desired and a button will appear on top. Follow the prompts. Get graphs. Be Happy
+
+## Disclaimer
+
+These macros are provided for research, educational, and general data-visualization purposes. They are provided "as is," without warranty of any kind. Users are responsible for independently verifying all calculations, sample sizes, group assignments, axis limits, error bars, and graphical outputs before using the results in publications, presentations, regulatory submissions, clinical decisions, or other consequential applications. The macros generates descriptive visualizations and does not perform statistical hypothesis testing. It is not medical software and is not intended for diagnosis, treatment decisions, or direct clinical use.
+
