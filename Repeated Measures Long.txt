@@ -1,0 +1,64 @@
+LONG-FORMAT REPEATED-MEASURES MEAN +/- SEM GRAPH
+
+WHAT IT DOES
+- Accepts selected long-format repeated-measures data.
+- Detects any number of time-point levels and preserves their first-appearance order.
+- Calculates Mean, sample SD, SEM, and valid N for each Group x Time combination.
+- Creates a line graph with markers and mean +/- SEM error bars.
+- Does not plot individual values or subject trajectories.
+- Supports grouped and ungrouped data.
+- Does not require R; it runs entirely in Excel VBA.
+
+INPUT LAYOUTS
+Grouped (four columns):
+Subject ID | Group | Time | Value
+
+Ungrouped (three columns):
+Subject ID | Time | Value
+
+Example grouped data:
+Mouse01 | Vehicle | Baseline | 4.2
+Mouse01 | Vehicle | Day 1    | 4.7
+Mouse02 | Vehicle | Baseline | 4.0
+Mouse02 | Vehicle | Day 1    | 4.4
+Mouse03 | Drug    | Baseline | 4.1
+Mouse03 | Drug    | Day 1    | 5.3
+
+INSTALL
+1. Open the macro-enabled workbook.
+2. Press Alt+F11.
+3. Choose File > Import File.
+4. Import RepeatedMeasuresLongFormatMeanSEM.bas.
+5. Press Ctrl+S and retain the .xlsm format.
+
+RUN
+1. Press Alt+F8.
+2. Run CreateRepeatedMeasuresLongFormatChart.
+3. Select exactly 4 columns for grouped data or 3 columns for ungrouped data, including headers.
+4. If grouped, confirm that column 2 is the grouping variable.
+5. The macro creates a new sheet named RM Long Chart.
+
+COLUMN RULES
+Grouped:
+Column 1 = Subject ID
+Column 2 = Group or condition
+Column 3 = Time
+Column 4 = Numeric value
+
+Ungrouped:
+Column 1 = Subject ID
+Column 2 = Time
+Column 3 = Numeric value
+
+ORDERING
+Groups and time points are displayed in the order in which they first appear in the selected data. Sort the source table into the desired time order before running the macro. This prevents text labels such as Day 10 from being alphabetically placed before Day 2.
+
+MISSING DATA
+Missing rows and blank/nonnumeric values are ignored. N and SEM are recalculated separately for every group and time point.
+
+DUPLICATE SUBJECT/TIME ROWS
+If the same Subject ID, Group, and Time has more than one numeric row, the macro displays a caution. Those rows are treated as separate observations. If they are technical replicates, average them to one value per subject/time before plotting.
+
+SEM
+SEM = STDEV.S(values)/SQRT(COUNT(values)).
+For N=1, SEM is displayed as zero.

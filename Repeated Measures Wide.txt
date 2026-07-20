@@ -1,0 +1,50 @@
+REPEATED-MEASURES MEAN +/- SEM LINE GRAPH MACRO
+
+WHAT IT DOES
+- Accepts a selected wide-format repeated-measures table with a variable number of time-point columns.
+- Calculates the mean, sample SD, SEM, and N at each time point.
+- Creates a line graph of means with +/- SEM error bars.
+- Does not plot individual observations or subject trajectories.
+- Can make one overall line or one separate line per experimental group.
+
+SUPPORTED INPUT
+Ungrouped:
+Subject ID | Baseline | Day 1 | Day 3 | Day 7 | ...
+
+Grouped:
+Subject ID | Treatment | Baseline | Day 1 | Day 3 | Day 7 | ...
+
+Each row is one subject. Every column after the ID (or ID and Group columns) is interpreted as a time point. The number of time points is detected automatically.
+
+INSTALL BESIDE THE OTHER MACROS
+1. Open the macro-enabled workbook.
+2. Press Alt+F11.
+3. Choose File > Import File.
+4. Import RepeatedMeasuresMeanSEM.bas.
+5. Press Ctrl+S and retain the .xlsm format.
+
+RUN
+1. Press Alt+F8.
+2. Run CreateRepeatedMeasuresMeanSEMChart.
+3. Select the complete table, including headers.
+4. Answer whether column 2 contains a grouping variable.
+   - Yes: column 1 is Subject ID, column 2 is Group, and columns 3 onward are time points.
+   - No: column 1 is Subject ID and columns 2 onward are time points.
+5. The macro creates a new Repeated Measures Chart sheet.
+
+OUTPUT
+- Time-point labels
+- Mean for every group and time point
+- SEM for every group and time point
+- Valid N for every group and time point
+- Mean +/- SEM line chart
+
+MISSING VALUES
+Blank and nonnumeric measurements are ignored. N is recalculated separately at each time point, so the macro supports missing observations. This is useful for visualization, but missing repeated-measures data may require a mixed-effects model rather than conventional repeated-measures ANOVA for inference.
+
+SEM
+SEM = STDEV.S(values)/SQRT(COUNT(values)).
+For N=1, SEM is displayed as zero.
+
+TERMINOLOGY NOTE
+A table with one time point per column is usually called wide format. Tidy/long repeated-measures data usually use columns such as Subject ID | Group | Time | Value. This macro intentionally supports the wide layout requested here.

@@ -1,0 +1,66 @@
+FLEXIBLE WIDE / LONG DATA CONVERTER
+
+TERMINOLOGY
+In strict data-science terminology, long format is usually the tidy format. This macro uses “wide” for data with multiple measurement columns and “long” for data with a Variable column and a Value column.
+
+WIDE TO LONG
+Input:
+Subject | Group | Baseline | Day 1 | Day 3
+S01     | Drug  | 4.2      | 5.1   | 5.7
+
+Output:
+Subject | Group | Time     | Value
+S01     | Drug  | Baseline | 4.2
+S01     | Drug  | Day 1    | 5.1
+S01     | Drug  | Day 3    | 5.7
+
+LONG TO WIDE
+Input:
+Subject | Group | Time     | Value
+S01     | Drug  | Baseline | 4.2
+S01     | Drug  | Day 1    | 5.1
+
+Output:
+Subject | Group | Baseline | Day 1
+S01     | Drug  | 4.2      | 5.1
+
+FEATURES
+- Converts in either direction.
+- Supports any number of identifier/grouping columns.
+- Preserves the first-appearance order of variables.
+- Wide to long: prompts for the Variable and Value column names.
+- Wide to long: choose whether blank measurements produce explicit rows.
+- Long to wide: choose how duplicate ID/Variable combinations are handled.
+- Always creates a new worksheet; source data are not altered.
+
+INSTALL IN PERSONAL.XLSB
+1. Press Alt+F11.
+2. Select VBAProject (PERSONAL.XLSB).
+3. Choose File > Import File.
+4. Import FlexibleWideLongConverter.bas.
+5. Press Ctrl+S.
+6. Close all Excel windows and save PERSONAL.XLSB when prompted.
+7. Reopen Excel.
+
+RUN
+1. Press Alt+F8.
+2. Run ConvertWideAndLongFormats.
+3. Select the complete table including headers.
+4. Choose 1 for Wide to Long or 2 for Long to Wide.
+5. Enter the number of identifier/grouping columns at the left of the table.
+6. Answer the remaining conversion prompts.
+
+COLUMN ORDER REQUIREMENTS
+Wide to long:
+All identifier/grouping columns must be at the left. Every selected column to their right is treated as a measurement variable.
+
+Long to wide:
+All identifier/grouping columns must be at the left. The final two selected columns must be Variable and Value, in that order.
+
+DUPLICATES DURING LONG TO WIDE
+A wide table can hold only one value for each ID combination and Variable. If duplicates exist, choose:
+1 = Stop and fix the source data (safest)
+2 = Keep the first value
+3 = Average numeric duplicates
+
+Be cautious with averaging: technical replicates may sometimes be averaged, but biological replicates generally should remain separate through an identifier column.
