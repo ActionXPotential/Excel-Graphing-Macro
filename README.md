@@ -14,6 +14,10 @@ Instructions:  The macros present instructions on the format of the data and dis
 For the Bar Charts, you have the option of splitting data into multiple graphs or combining into one graph for multi-variable stuff. You can select a one-way or two-way anova design. You can choose to cluster data based on outcomes or based on groups depending on visualization preferences. 
 
 
+
+https://github.com/user-attachments/assets/08000784-630c-4ad6-8287-c29d416d248b
+
+
 <img width="406" height="575" alt="Screenshot 2026-07-20 104856" src="https://github.com/user-attachments/assets/da1407d4-aab8-49d6-b040-2dc9480a8c1e" />
 
 <img width="702" height="371" alt="Screenshot 2026-07-20 105000" src="https://github.com/user-attachments/assets/edfed3f9-ec2f-4607-97de-2d2914ab9e5b" />
