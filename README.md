@@ -40,6 +40,12 @@ A long-to-wide converter was added for convenience.
 
 To install macro's (files that end in .bas) that will be available between spreadsheets. 
 
+
+
+https://github.com/user-attachments/assets/0929ec13-dca5-4701-864a-eb6dfdbcbdd8
+
+
+
 Select: view -> Macros -> Record Macro -> Store macro in: Personal Macro Workbook -> OK
 
 Then immediately turn off macro recording: Macros -> Turn off macro recording. 
